@@ -1,1 +1,3 @@
-ok
+hashset.add()
+hashset.remove()
+hashset.clear()
