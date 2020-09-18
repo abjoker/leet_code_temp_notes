@@ -1,4 +1,7 @@
 # Happy number
+"""
+Approach: Compute sum of squares iteratively and store them in a set until the computed sum is either 1 or is present in our set
+"""
 
 class Solution:
     def get_square_sum(self, n:int) -> int:
