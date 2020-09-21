@@ -1,0 +1,26 @@
+"""
+Approach:
+
+Create 2 hash maps each having key as the character in first string and the values as the character in the second string
+Apply one-pass approach which return false if the character is present in the hash and and the value is not the same as the character in the second string, else
+it inserts this key:value pair in the hash
+
+"""
+
+def isIsomorphic(s: str, t: str) -> bool:
+        hmap1, hmap2 = {}, {}
+        
+        for zs, zt  in zip(s, t):
+            
+            if zs in hmap1 and hmap1[zs] != zt:
+                return False
+            else:
+                hmap1[zs] = zt
+                
+            if zt in hmap2 and hmap2[zt] != zs:
+                return False
+            else:
+                hmap2[zt] = zs
+                
+            
+        return True
