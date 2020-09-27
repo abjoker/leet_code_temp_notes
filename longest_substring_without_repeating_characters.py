@@ -13,3 +13,18 @@ def lengthOfLongestSubstring(self, s: str) -> int:
               i += 1
 
       return res
+
+def lengthOfLongestSubstring(self, s: str) -> int:
+        hash_map = {}
+        left = res = 0
+        
+        for right, val in enumerate(s):
+            if val in hash_map and left <= hash_map[val]:
+                left = hash_map[val] + 1
+            else:
+                # +1 since left points to first element of substring and right points to last
+                res = max(res, right - left + 1)
+                
+            hash_map[val] = right
+            
+        return res
