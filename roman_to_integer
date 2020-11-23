@@ -1,0 +1,22 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        hash_map = {"I": 1, 
+                    "V": 5,
+                    "X": 10,
+                    "L": 50,
+                    "C": 100,
+                    "D": 500,
+                    "M": 1000,
+                   }
+        
+        res, prev = 0, 0
+        for index, value in enumerate(reversed(s)):
+            val = hash_map[value]
+            if val < prev:
+                res -= val
+            else:
+                res += val
+                
+            prev = val
+
+        return res
